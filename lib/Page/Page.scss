@@ -1,0 +1,67 @@
+@import '../styles/variables.scss';
+@import '../styles/colors.scss';
+@import '../styles/mixins.scss';
+.header {
+  background-color: $white;
+  padding-top: calc($spacing-unit / 1.5);
+
+  h1, h2, h3, h4 {
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  @media (min-width: $desktop) {}
+}
+
+.subheader {
+  background-color: $white;
+  color: $text-color;
+  padding-top: calc($spacing-unit / 2);
+
+  h1, h2, h3, h4, h5{
+    margin: 0;
+  }
+
+  nav {
+    ul li a {
+      display: inline-block;
+      background-color: $gray;
+      padding: calc($spacing-unit / 8) calc($spacing-unit / 4) calc($spacing-unit / 6);
+      position: relative;
+      color: white;
+
+      &:before, &:after {
+        background-color: $gray;
+        border-radius: 50%;
+        content: '';
+        height: 31px;
+        position: absolute;
+        top: 0;
+        width: 31px;
+        z-index: 0;
+
+
+      }
+
+      h1,h2,h3,h4,h5,p {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:before {left: -15px;}
+      &:after {right: -15px;}
+
+      &:hover, &:focus, &:active, &.active {
+        background-color: $link-color;
+        &:after, &:before {
+          background-color: $link-color;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {}
+}
+
+.body {}

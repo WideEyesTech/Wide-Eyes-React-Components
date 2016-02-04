@@ -1,0 +1,93 @@
+/*===============================
+=            HELPERS            =
+===============================*/
+/*  BORDER HELPERS */
+.border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+.border-top {
+  border-top: 1px solid $border-color;
+}
+.border-right {
+  border-right: 1px solid $border-color;
+}
+.border-left {
+  border-left: 1px solid $border-color;
+}
+/*  ALIGNMENT HELPERS */
+.align-bottom {
+  vertical-align: bottom;
+}
+/*  MARGIN HELPERS */
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.margin-top-bg {
+  margin-top: calc($spacing-unit * 1.5);
+}
+.margin-top {
+  margin-top: $spacing-unit;
+}
+.margin-top-sm {
+  margin-top: calc($spacing-unit / 2);
+}
+.margin-top-xsm {
+  margin-top: calc($spacing-unit / 4);
+}
+.margin-bottom {
+  margin-bottom: $spacing-unit;
+}
+.margin-bottom-sm {
+  margin-bottom: calc($spacing-unit / 2);
+}
+.margin-bottom-xsm {
+  margin-bottom: calc($spacing-unit / 4);
+}
+/*  STYLE HELPERS */
+.no-shadow {
+  box-shadow: none !important;
+}
+.hr {
+  margin-top: calc($spacing-unit / 2);
+  margin-bottom: calc($spacing-unit / 2);
+}
+.clickable {
+  cursor: pointer;
+}
+/*  LAYOUT HELPERS */
+.block {
+  display: block !important;
+}
+.inline {
+  display: inline !important;
+}
+.inlineBlock {
+  display: inline-block !important;
+}
+/* VISIBILITY HELPERS*/
+.invisible {
+  visibility: hidden;
+}
+.hidden-xs {
+  display: none !important;
+}
+.hidden-md {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+.hidden-lg {
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}
+/* TRANSFORMATION HELPERS */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}

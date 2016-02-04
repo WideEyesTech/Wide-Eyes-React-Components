@@ -1,0 +1,23 @@
+@import "variables.scss";
+@import "colors.scss";
+@import "mixins.scss";
+@import "grid.scss";
+
+
+.root {
+  @extend .col-xs-1-1;
+
+  @extend .col-md-2-3;
+  @extend .col-md-offset-1-6;
+
+  @extend .col-lg-1-2;
+  @extend .col-lg-offset-1-4;
+
+  background-color: $white;
+  border-radius: $border-radius;
+  padding: $spacing-unit;
+
+  .body {
+    margin-top: $spacing-unit;
+  }
+}

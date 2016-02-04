@@ -1,0 +1,39 @@
+@import '../styles/variables.scss';
+@import '../styles/colors.scss';
+@import '../styles/mixins.scss';
+
+.root {
+  width: 100%;
+  tr {
+    td,
+    th {
+      padding: calc($spacing-unit / 2);
+    }
+  }
+  thead {
+    background-color: $table-color;
+    border-bottom: 1px solid $border-color;
+    tr {
+      th {
+        text-align: left;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+  }
+  tbody {
+    border: none;
+    tr {
+      &:first-child {
+        td {
+        }
+      }
+      &:nth-of-type(odd) {
+        background-color: $white;
+      }
+      &:nth-of-type(even) {
+        background-color: $gray;
+      }
+    }
+  }
+}

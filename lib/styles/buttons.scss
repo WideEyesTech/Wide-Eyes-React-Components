@@ -1,0 +1,176 @@
+@import 'colors.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+/*================================
+=            BUTTONS            =
+================================*/
+.btn {
+  @mixin transition all, $animation-speed;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-weight: 400;
+  height: auto;
+  line-height: 1;
+  min-width: 100px;
+  padding: 0.7rem 1rem;
+  &:hover,
+  &:focus {
+    background-repeat: none;
+    background-image: none;
+    text-decoration: none;
+    outline: none;
+  }
+  &.btn-disabled,
+  &[disabled='disabled'],
+  &[disabled='true'],
+  &[disabled=''] {
+    box-shadow: 0 2px 0 $gray !important;
+    pointer-events: none;
+    color: $dark-gray;
+    background-color: $gray;
+  }
+  &.btn-primary {
+    color: $white;
+    border-color: $accent-color;
+    background-color: $accent-color;
+    box-shadow: 0 2px 0 $accent-dark-color;
+    &:hover,
+    &:focus {
+      background-color: $accent-dark-color;
+    }
+    &.btn-outline {
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid;
+      color: $accent-color;
+      &:hover,
+      &:focus {
+        border-color: $white;
+        color: $white;
+      }
+    }
+    &.btn-bg {
+      box-shadow: 0 3px 0 $accent-dark-color;
+    }
+  }
+  &.btn-success {
+    color: $white;
+    border-color: $success-color;
+    background-color: $success-color;
+    box-shadow: 0 2px 0 $success-dark-color;
+    &:hover,
+    &:focus {
+      background-color: $success-dark-color;
+    }
+    &.btn-outline {
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid;
+      color: $success-color;
+      &:hover,
+      &:focus {
+        border-color: $white;
+        color: $white;
+      }
+    }
+    &.btn-bg {
+      box-shadow: 0 3px 0 $success-dark-color;
+    }
+  }
+  &.btn-warning {
+    color: $white;
+    border-color: $opposite-color;
+    background-color: $opposite-color;
+    box-shadow: 0 2px 0 $opposite-dark-color;
+    &:hover,
+    &:focus {
+      background-color: $opposite-dark-color;
+    }
+    &.btn-outline {
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid;
+      color: $opposite-color;
+      &:hover,
+      &:focus {
+        border-color: $white;
+        color: $white;
+      }
+    }
+    &.btn-bg {
+      box-shadow: 0 3px 0 $opposite-dark-color;
+    }
+  }
+  &.btn-danger {
+    color: $white;
+    border-color: $danger-color;
+    background-color: $danger-color;
+    box-shadow: 0 2px 0 $danger-dark-color;
+    &:hover,
+    &:focus {
+      background-color: $danger-dark-color;
+    }
+    &.btn-outline {
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid;
+      color: $danger-color;
+      &:hover,
+      &:focus {
+        border-color: $white;
+        color: $white;
+      }
+    }
+    &.btn-bg {
+      box-shadow: 0 3px 0 $danger-dark-color;
+    }
+  }
+  &.btn-link {
+    color: $accent-color;
+    background-color: $white;
+    min-width: 0;
+    border-color: $accent-color;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background-color: $gray;
+    }
+    &.btn-outline {
+      background-color: transparent;
+      box-shadow: none;
+      &:hover,
+      &:focus {}
+    }
+  }
+  &.btn-default {
+    color: $text-color;
+    border: 1px solid $gray;
+    background-color: $white;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background-color: $gray;
+    }
+  }
+  &.btn-sm {
+    padding: 0.5rem 0.8rem;
+  }
+  &.btn-bg {
+    padding: 1.1rem 1.8rem 1rem;
+    text-transform: uppercase;
+    &.btn-disabled,
+    &[disabled='disabled'],
+    &[disabled='true'],
+    &[disabled=''] {
+      box-shadow: 0 3px 0 $gray !important;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+}
+/*-----  End of BUTTONS  ------*/

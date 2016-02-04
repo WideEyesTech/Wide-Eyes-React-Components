@@ -1,0 +1,74 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  @extend html;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+#app {
+  @extend html;
+}
+
+a {
+  @mixin transition all, 0.1s;
+  color: $link-color;
+  text-decoration: none;
+
+  &:after,
+  &:before {
+    @mixin transition all, 0.1s;
+  }
+
+  &:hover {
+    @mixin transition all, 0.1s;
+    color: $link-hover-color;
+    text-decoration: none;
+    &:after,
+    &:before {
+      @mixin transition all, 0.1s;
+    }
+  }
+  &:active, &:focus {
+    text-decoration: none;
+  }
+}
+
+ul, ul.list-inline {
+  list-style: none;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {box-sizing: border-box;}
+
+/* typeahead */
+.typeahead {
+  @mixin boxShadow 1;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: none;
+
+  li {
+    &.active {
+      a {
+        background-color: $accent-color;
+      }
+    }
+
+    a {
+      padding: calc($spacing-unit / 4);
+    }
+  }
+}

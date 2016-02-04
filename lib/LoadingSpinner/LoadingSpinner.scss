@@ -1,0 +1,57 @@
+@import '../styles/animations.scss';
+@import '../styles/colors.scss';
+
+
+@keyframes loadingSpinner {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  .root {
+    .spinner {
+      border-top-color: $white;
+      border-left-color: $white;
+    }
+  }
+}
+.root {
+  display: inline-block;
+  .spinner {
+    @mixin animation loadingSpinner, 600ms, linear infinite;
+    border: 2px solid transparent;
+    border-top-color: $accent-color;
+    border-left-color: $accent-color;
+    border-radius: 50%;
+    display: block;
+    height: 28px;
+    margin: 0 auto;
+    width: 28px;
+    z-index: 2000;
+  }
+}
+.fixed {
+  position: fixed;
+  width: 100%;
+  background: $white;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.row {
+  display: flex;
+  align-items: center;
+}

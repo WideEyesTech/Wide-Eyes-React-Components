@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+@import '../styles/colors.scss';
+
+.tag {
+  display: inline-block;
+  text-transform: capitalize;
+  margin: calc($spacing-unit / 8);
+  padding: calc($spacing-unit / 4);
+  border-radius: $border-radius;
+  background-color: color($accent-color lightness(65%));
+  color: $white;
+
+  .close {
+    color: $accent-dark-color;
+  }
+
+}
+
+.disabled {
+  background-color: color($accent-color lightness(95%));
+}

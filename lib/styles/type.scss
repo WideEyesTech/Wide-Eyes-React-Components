@@ -1,0 +1,61 @@
+/*======================================
+=            TYPE STYLING            =
+======================================*/
+h4,
+h5,
+h6 {
+  line-height: $line-height-base;
+}
+.extend_1 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+}
+p {
+  margin-bottom: 1.3em;
+}
+.display_h1 {
+  font-size: 4.76em;
+}
+.display_h2 {
+  font-size: 3.81em;
+}
+.display_h3 {
+  font-size: 3.05em;
+}
+h1 {
+  @extend .extend_1;
+  margin-top: 0;
+  font-size: 2.441em;
+}
+h2 {
+  @extend .extend_1;
+  font-size: 1.953em;
+}
+h3 {
+  @extend .extend_1;
+  font-size: 1.563em;
+}
+h4 {
+  @extend .extend_1;
+  font-size: 1.25em;
+}
+h5 {
+  @extend .extend_1;
+  font-size: 1em;
+}
+small, .font_small {
+  font-size: 0.85em;
+}
+/* HELPERS */
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-muted {
+  color: $dark-gray;
+}
+.text-light {
+  font-weight: 300;
+}

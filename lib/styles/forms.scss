@@ -1,0 +1,48 @@
+@import 'variables.scss';
+@import 'colors.scss';
+@import 'mixins.scss';
+
+.formGroup {
+  width: 100%;
+  margin-bottom: calc($spacing-unit / 2);
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  input, select {
+    background-color: $white;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+    color: $text-color;
+    font-weight: 300;
+    padding: calc($spacing-unit / 4);
+    width: 100%;
+
+    &:hover, &:focus {
+      @mixin transition border-color, $animation-speed;
+      border-color: $accent-color;
+      outline: none;
+    }
+
+    &.input-bg {
+      padding: calc($spacing-unit / 3);
+    }
+
+    option {
+      font-weight: 300;
+    }
+  }
+}
+
+.fieldset {
+  padding: 0;
+  border: none;
+  margin-bottom: calc($spacing-unit / 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

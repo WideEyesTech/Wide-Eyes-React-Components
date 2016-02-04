@@ -1,0 +1,25 @@
+@define-mixin keyframes $animation-name {
+    @-webkit-keyframes $(animation-name) {
+        @mixin-content;
+    }
+    @-moz-keyframes $(animation-name) {
+        @mixin-content;
+    }
+    @-ms-keyframes $(animation-name) {
+        @mixin-content;
+    }
+    @-o-keyframes $(animation-name) {
+        @mixin-content;
+    }
+    @keyframes $(animation-name) {
+        @mixin-content;
+    }
+}
+
+@define-mixin animation $name, $speed, $curve {
+  -webkit-animation: $name $speed $curve;
+  -moz-animation: $name $speed $curve;
+  -ms-animation: $name $speed $curve;
+  -o-animation: $name $speed $curve;
+  animation: $name $speed $curve;
+}
