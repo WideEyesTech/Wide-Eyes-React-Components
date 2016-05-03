@@ -7,24 +7,14 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
+import merge from 'lodash.merge';
 import path from 'path';
 import webpack from 'webpack';
-import merge from 'lodash.merge';
 
 const DEBUG = !process.argv.includes('--release');
 const VERBOSE = process.argv.includes('--verbose');
-const AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1',
-];
 const GLOBALS = {
-  'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
+  'process.env.NODE_ENV': DEBUG ? 'development' : 'production',
   __DEV__: DEBUG,
 };
 
@@ -63,13 +53,12 @@ const config = {
         test: /\.jsx?$/,
         exclud1e: /node_modules/,
         loader: 'babel',
-        // plugins and presets are added on runtime (see build.js script)
+        // plugins and presets are added on runtime (see tools/build)
       }, {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          'css-loader?' + (DEBUG ? 'sourceMap&' : 'minimize&') +
-          'modules&localIdentName=[name]_[local]_[hash:base64:3]',
+          `css-loader?${(DEBUG ? 'sourceMap&' : 'minimize&')}modules&localIdentName=[name]_[local]_[hash:base64:3]`,
           'postcss-loader',
         ],
       }
@@ -79,9 +68,7 @@ const config = {
   postcss: function plugins(bundler) {
     return [
       require('postcss-import')({ addDependencyTo: bundler }),
-      require('precss'),
-      require('postcss-cssnext'),
-      require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
+      require('postcss-cssnext')
     ];
   },
 };
@@ -93,8 +80,12 @@ const config = {
 const clientConfig = merge({}, config, {
   entry: path.join(__dirname, '../lib/index.jsx'),
   output: {
-    filename: "index.js",
-    path: path.join(__dirname, '../'),
+    filename: 'index.js',
+    path: path.join(__dirname, '../dist'),
+  },
+  externals: {
+    react: 'React',
+    classnames: 'cn'
   },
   plugins: [
     new webpack.DefinePlugin(GLOBALS),

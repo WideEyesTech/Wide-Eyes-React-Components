@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "lib/index.jsx",
   "scripts": {
-    "build": "babel-node tools/run build"
+    "build": "babel-node tools/run build --release"
   },
   "author": "GC",
   "license": "ISC",
