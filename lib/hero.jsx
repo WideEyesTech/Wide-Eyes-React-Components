@@ -13,7 +13,7 @@ export const Hero = ({title, children}) =>
       )
       : null
     }
-    <section className={hero.body}>
+    <section>
       {children}
     </section>
   </section>
