@@ -1,6 +1,5 @@
 export * from './buttons.jsx'
 export * from './form.jsx'
-export * from './grid.jsx'
 export * from './hero.jsx'
 export * from './nav.jsx'
 export * from './modal/modal.jsx'
