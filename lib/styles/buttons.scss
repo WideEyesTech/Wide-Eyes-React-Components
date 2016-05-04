@@ -10,11 +10,13 @@
   border: none;
   border-radius: $border-radius;
   font-size: $font-size-base;
-  font-weight: 400;
+  font-weight: bold;
   height: auto;
   line-height: 1;
   min-width: 100px;
   padding: 0.7rem 1rem;
+  cursor: pointer;
+
   &:hover,
   &:focus {
     background-repeat: none;

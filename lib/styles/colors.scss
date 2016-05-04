@@ -1,28 +1,21 @@
-$white: #fff;
-$black: #333;
+$accent-color: #0BB6FF;
+$accent-dark-color: color(#0BB6FF blackness(15%));
+$black: rgba(0, 0, 0, 0.84);
+$danger-color: #FF3100;
+$danger-dark-color: color(#FF3100 blackness(15%));
+$dark-gray: color(#D5D7D9 blackness(15%));
+$gray: #D5D7D9;
+$opposite-color: #FF8700;
+$opposite-dark-color: color(#FF8700 blackness(15%));
+$success-color: #00B74A;
+$success-dark-color: color(#00B74A blackness(15%));
+$white: white;
 
-$gray: #ececec;
-$dark-gray: #ccc;
-
-$text-color: $black;
-
-$border-color: $gray;
-
-$accent-color: #1193FF;
-$accent-dark-color: #00569D;
-
-$opposite-color: #FF9A00;
-$opposite-dark-color: #A76500;
-
-$success-color: #00C618;
-$success-dark-color: #00780F;
-
-$danger-color: #FF0000;
-$danger-dark-color: #970808;
 
 $background-color: $white;
-$page-header-color: $white;
-$panel-header-color: $white;
-
+$border-color: $gray;
 $link-color: $accent-color;
 $link-hover-color: $accent-dark-color;
+$page-header-color: $white;
+$panel-header-color: $white;
+$text-color: $black;
