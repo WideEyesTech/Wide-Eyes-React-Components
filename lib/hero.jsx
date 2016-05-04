@@ -1,4 +1,4 @@
-import hero from './styles/hero.scss';
+import hero from 'styles/hero.scss';
 import React from 'react'
 
 export const Hero = ({title, children}) =>

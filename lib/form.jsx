@@ -1,7 +1,6 @@
 import cn from 'classnames'
+import s from 'styles/forms.scss';
 import React from 'react'
-import s from '.styles/forms.scss';
-
 
 export const Form = (props) =>
   <form {...props} noValidate autoComplete>

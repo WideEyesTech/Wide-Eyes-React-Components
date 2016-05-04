@@ -7,14 +7,14 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import merge from 'lodash.merge';
-import path from 'path';
-import webpack from 'webpack';
+import merge from 'lodash.merge'
+import path from 'path'
+import webpack from 'webpack'
 
 const DEBUG = !process.argv.includes('--release');
 const VERBOSE = process.argv.includes('--verbose');
 const GLOBALS = {
-  'process.env.NODE_ENV': DEBUG ? 'development' : 'production',
+  'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   __DEV__: DEBUG,
 };
 
@@ -45,29 +45,27 @@ const config = {
 
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.json'],
+    root: [path.join(__dirname, '../lib')]
   },
 
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclud1e: /node_modules/,
+        exclude: /node_modules/,
         loader: 'babel',
-        // plugins and presets are added on runtime (see tools/build)
+        // plugins and presets are added on runtime (see build.js script)
       }, {
         test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          `css-loader?${(DEBUG ? 'sourceMap&' : 'minimize&')}modules&localIdentName=[name]_[local]_[hash:base64:3]`,
-          'postcss-loader',
-        ],
+        loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
       }
     ],
   },
 
-  postcss: function plugins(bundler) {
+  postcss: function plugins(webpack) {
     return [
-      require('postcss-import')({ addDependencyTo: bundler }),
+      require('postcss-import')({ addDependencyTo: webpack }),
+      require('precss'),
       require('postcss-cssnext')
     ];
   },
@@ -81,11 +79,12 @@ const clientConfig = merge({}, config, {
   entry: path.join(__dirname, '../lib/index.jsx'),
   output: {
     filename: 'index.js',
-    path: path.join(__dirname, '../dist'),
+    libraryTarget: 'commonjs',
+    path: path.join(__dirname, '../dist')
   },
   externals: {
-    react: 'React',
-    classnames: 'cn'
+    React: 'react',
+    cn: 'classnames'
   },
   plugins: [
     new webpack.DefinePlugin(GLOBALS),

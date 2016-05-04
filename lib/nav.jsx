@@ -1,4 +1,4 @@
-import nav from './styles/nav.scss';
+import nav from 'styles/nav.scss';
 import React from 'react'
 
 export const Nav = ({inline, children}) =>

@@ -1,6 +1,6 @@
 import cn from 'classnames'
+import s from 'styles/buttons.scss';
 import React from 'react'
-import s from './styles/buttons.scss';
 
 export const Button = (props) =>
   <button style={props.width ? {width: props.width} : null} className={cn({
@@ -15,6 +15,6 @@ export const Button = (props) =>
     [s['btn-danger']]: props.mode === 'danger',
     [s['btn-warning']]: props.mode === 'warning',
     [s['btn-success']]: props.mode === 'success'
-    })} {...props}>
+  })} {...props}>
     {props.children}
   </button>

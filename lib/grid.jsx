@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import grid from './styles/grid.scss'
+import grid from 'styles/grid.scss'
 import React from 'react'
 
 export const Container = (props) =>

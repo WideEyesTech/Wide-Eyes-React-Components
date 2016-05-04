@@ -7,8 +7,8 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import run from './run';
 import webpack from 'webpack';
+
 import webpackConfig from './webpack.config';
 
 /**
@@ -22,9 +22,9 @@ async function build() {
       .forEach(x => x.query = {
         presets: ['es2015', 'react'],
         plugins: [
-          ["transform-async-to-generator"],
-          ["transform-class-properties"],
-          ["transform-decorators-legacy"]
+          ['transform-async-to-generator'],
+          ['transform-class-properties'],
+          ['transform-decorators-legacy']
         ]
       });
 
