@@ -1,8 +1,8 @@
 import hero from 'styles/hero.scss';
 import React from 'react'
 
-export const Hero = ({title, children}) =>
-  <section className={hero.root}>
+export const Hero = ({title, style, children}) =>
+  <section className={hero.root} style={style || {}}>
     {title
       ? (
         <header className={hero.header}>
