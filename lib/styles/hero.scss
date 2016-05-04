@@ -6,6 +6,7 @@
 .root {
   background-color: $white;
   border-radius: $border-radius;
+  box-shadow: @include boxShadow(1);
   padding: $spacing-unit;
 
   .body {
