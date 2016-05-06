@@ -1,0 +1,32 @@
+/* style input range */
+.InputRange-label {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+  font-size: .85rem !important;
+}
+
+.InputRange-label--value {
+  top: -2rem !important;
+  font-weight: bold;
+}
+
+.InputRange-label--value:after {
+  content: '€';
+  position: absolute;
+  left: 12px;
+}
+
+.InputRange-sliderContainer {}
+
+.InputRange-track--container {
+  background: white !important;
+}
+
+.InputRange-track--active {
+  background: #0BB6FF !important;
+}
+
+.InputRange-slider {
+  background: #0BB6FF !important;
+  border: 1px solid #0BB6FF !important;
+}
