@@ -1,30 +1,20 @@
-import React, {PropTypes} from 'react'
-import cn from 'classnames'
+import React, { PropTypes } from 'react'
+
 import s from './Tag.scss'
 
-export default class Tag extends React.Component {
-  static propTypes = {
-    removeTag: PropTypes.func,
-    disabled: PropTypes.bool,
-  };
+const AttributeTag = ({attribute, close}) => {
+  const _close = () => close(attribute)
 
-  render() {
-    const {disabled, removeTag, children} = this.props;
-    const closeComp = (
-      <span>
-        &nbsp;
-        <a href="#" onClick={(ev) => removeTag(ev, children)}>
-          <i className={cn('fa', 'fa-close', s.close)}></i>
-        </a>
-      </span>
-    );
-
-    return (
-      <div className="inlineBlock">
-        <span className={cn({[s.tag]: true, [s.disabled]: disabled})}>
-          {children} {removeTag ? closeComp : null}
-        </span>
+  return (
+    <div className={s.root}>
+      <div className={s.closeContainer}>
+        <button className={s.close} onClick={_close}>x</button>
       </div>
-    )
-  }
+      <div className={s.attributeContainer}>
+        {attribute}
+      </div>
+    </div>
+  )
 }
+
+export default AttributeTag
