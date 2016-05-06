@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import s from './Tag.scss'
 
-const AttributeTag = ({attribute, close}) => {
+const Tag = ({attribute, close}) => {
   const _close = () => close(attribute)
 
   return (
@@ -17,4 +17,9 @@ const AttributeTag = ({attribute, close}) => {
   )
 }
 
-export default AttributeTag
+Tag.propTypes = {
+  attribute: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
+};
+
+export default Tag
