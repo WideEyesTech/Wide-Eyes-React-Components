@@ -1,6 +1,12 @@
+import 'style-loader!css-loader!styles/react-input-range.css'
+import 'style-loader!css-loader!react-select/dist/react-select.css'
+import 'style-loader!css-loader!react-input-range/dist/react-input-range.css'
+
 import cn from 'classnames'
 import s from 'styles/forms.scss';
+import InputRange from 'react-input-range'
 import React from 'react'
+import ReactSelect from 'react-select'
 
 export const Form = (props) =>
   <form {...props} noValidate autoComplete>
@@ -25,12 +31,20 @@ export class Input extends React.Component {
   }
 }
 
-export class Select extends React.Component {
-  render() {
-    return (
-      <select className={cn({[s['input-bg']]: this.props.size === 'bg'})} {...this.props}>
-        {this.props.children}
-      </select>
-    );
-  }
-}
+export const Select = ({name, onChange, options, value, placeholder}) =>
+  <ReactSelect
+    name={name}
+    onChange={onChange}
+    options={options}
+    value={value}
+    placeholder={placeholder}
+  />
+
+export const InputRange = ({maxValue, minValue, step, onChange, value}) =>
+  <InputRange
+    maxValue={maxValue}
+    minValue={minValue}
+    onChange={onChange}
+    step={step}
+    value={value}
+  />
