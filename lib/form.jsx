@@ -6,8 +6,8 @@ import cn from 'classnames'
 import s from 'styles/forms.scss';
 import React from 'react'
 
-export InputRange from 'react-input-range'
-export Select from 'react-select'
+// export InputRange from 'react-input-range'
+// export Select from 'react-select'
 
 export const Form = (props) =>
   <form {...props} noValidate autoComplete>
