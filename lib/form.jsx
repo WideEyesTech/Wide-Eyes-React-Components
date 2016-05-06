@@ -1,11 +1,11 @@
-import 'style-loader!css-loader!styles/react-input-range.css'
-import 'style-loader!css-loader!react-select/dist/react-select.css'
 import 'style-loader!css-loader!react-input-range/dist/react-input-range.css'
+import 'style-loader!css-loader!react-select/dist/react-select.css'
+import 'style-loader!css-loader!styles/react-input-range.css'
 
 import cn from 'classnames'
 import s from 'styles/forms.scss';
-import InputRange from 'react-input-range'
 import React from 'react'
+import ReactInputRange from 'react-input-range'
 import ReactSelect from 'react-select'
 
 export const Form = (props) =>
@@ -41,7 +41,7 @@ export const Select = ({name, onChange, options, value, placeholder}) =>
   />
 
 export const InputRange = ({maxValue, minValue, step, onChange, value}) =>
-  <InputRange
+  <ReactInputRange
     maxValue={maxValue}
     minValue={minValue}
     onChange={onChange}
