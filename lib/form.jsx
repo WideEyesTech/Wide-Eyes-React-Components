@@ -5,8 +5,9 @@ import 'style-loader!css-loader!styles/react-input-range.css'
 import cn from 'classnames'
 import s from 'styles/forms.scss';
 import React from 'react'
-import ReactInputRange from 'react-input-range'
-import ReactSelect from 'react-select'
+
+export ReactInputRange from 'react-input-range'
+export ReactSelect from 'react-select'
 
 export const Form = (props) =>
   <form {...props} noValidate autoComplete>
@@ -30,21 +31,3 @@ export class Input extends React.Component {
     );
   }
 }
-
-export const Select = ({name, onChange, options, value, placeholder}) =>
-  <ReactSelect
-    name={name}
-    onChange={onChange}
-    options={options}
-    value={value}
-    placeholder={placeholder}
-  />
-
-export const InputRange = ({maxValue, minValue, step, onChange, value}) =>
-  <ReactInputRange
-    maxValue={maxValue}
-    minValue={minValue}
-    onChange={onChange}
-    step={step}
-    value={value}
-  />
