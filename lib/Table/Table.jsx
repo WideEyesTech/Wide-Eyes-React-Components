@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import React, { PropTypes } from 'react'
 
 import s from './Table.scss'
@@ -16,6 +17,6 @@ export const Table = ({striped, bordered, children}) => {
 }
 
 Table.propTypes = {
-  striped: PropTypes.bool.isRequired,
-  bordered: PropTypes.bool.isRequired,
+  striped: PropTypes.bool,
+  bordered: PropTypes.bool,
 };
