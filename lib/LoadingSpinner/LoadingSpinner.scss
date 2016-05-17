@@ -14,14 +14,15 @@
   }
 }
 
-button {
+.white {
   .root {
     .spinner {
-      border-top-color: $white;
-      border-left-color: $white;
+      border-top-color: $white !important;
+      border-left-color: $white !important;
     }
   }
 }
+
 .root {
   display: inline-block;
   .spinner {
