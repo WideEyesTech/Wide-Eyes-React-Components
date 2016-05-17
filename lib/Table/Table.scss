@@ -1,0 +1,46 @@
+.root {
+  background: white;
+  border-collapse: collapse;
+  border-radius: 3px;
+  border-spacing: 0;
+  box-shadow:  0 3px 6px rgba(33, 61, 76, 0.16), 0 3px 6px rgba(33, 61, 76, 0.23);
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+
+  tr td,
+  tr th {
+    margin: 0;
+    border: 0;
+    padding: 1rem;
+  }
+
+  thead tr th {
+    margin: 0;
+    border-top: none;
+    border-bottom: 5px solid #D5D7D9;
+    min-width: auto !important;
+  }
+}
+
+.striped tbody {
+  border: none;
+
+  tr {
+    border: none;
+  }
+}
+
+.striped tbody tr:first-child td {
+  vertical-align: middle;
+  border: none;
+}
+
+.striped tbody tr:nth-of-type(odd)  {
+  background-color: white;
+}
+
+.striped tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
