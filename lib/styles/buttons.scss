@@ -51,6 +51,7 @@
       &:focus {
         border-color: $white;
         color: $white;
+        background-color: $accent-color;
       }
     }
     &.btn-bg {
@@ -75,6 +76,7 @@
       &:focus {
         border-color: $white;
         color: $white;
+        background-color: $success-color;
       }
     }
     &.btn-bg {
@@ -99,6 +101,7 @@
       &:focus {
         border-color: $white;
         color: $white;
+        background-color: $opposite-color;
       }
     }
     &.btn-bg {
@@ -123,6 +126,7 @@
       &:focus {
         border-color: $white;
         color: $white;
+        background-color: $danger-color;
       }
     }
     &.btn-bg {
