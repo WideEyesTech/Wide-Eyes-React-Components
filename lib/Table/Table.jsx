@@ -16,6 +16,6 @@ export const Table = ({striped, bordered, children}) => {
 }
 
 Table.propTypes = {
-  striped: PropTypes.string.isRequired,
-  bordered: PropTypes.func.isRequired,
+  striped: PropTypes.bool.isRequired,
+  bordered: PropTypes.bool.isRequired,
 };
