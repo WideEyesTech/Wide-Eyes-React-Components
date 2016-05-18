@@ -147,6 +147,7 @@
       background-color: transparent;
       color: $accent-dark-color;
     }
+
     &.btn-outline {
       background-color: transparent;
       box-shadow: none;
@@ -159,7 +160,7 @@
     background-color: transparent;
     border: 2px solid $gray;
     box-shadow: none;
-    color: $text-color;
+    color: $blackish;
 
     &:hover,
     &:focus {
@@ -182,7 +183,7 @@
       box-shadow: 0 3px 0 $gray !important;
     }
   }
-  
+
   h1,
   h2,
   h3,
