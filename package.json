@@ -1,6 +1,6 @@
 {
   "name": "wideeyes-react-components-library",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "main": "index.jsx",
   "scripts": {
     "build": "babel-node tools/run build --release --verbose"
