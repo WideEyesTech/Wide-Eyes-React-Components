@@ -10,7 +10,7 @@ import React from 'react'
 // export Select from 'react-select'
 
 export const Form = (props) =>
-  <form {...props} noValidate autoComplete>
+  <form {...props} className={s.form} noValidate autoComplete>
     {props.children}
   </form>
 
