@@ -28,10 +28,9 @@
   &[disabled='disabled'],
   &[disabled='true'],
   &[disabled=''] {
-    box-shadow: 0 2px 0 $gray !important;
+    cursor: default;
     pointer-events: none;
-    color: $dark-gray;
-    background-color: $gray;
+    opacity: .5;
   }
   &.btn-primary {
     color: $white;
@@ -176,12 +175,6 @@
   &.btn-bg {
     padding: 1.1rem 1.8rem 1rem;
     text-transform: uppercase;
-    &.btn-disabled,
-    &[disabled='disabled'],
-    &[disabled='true'],
-    &[disabled=''] {
-      box-shadow: 0 3px 0 $gray !important;
-    }
   }
 
   h1,
