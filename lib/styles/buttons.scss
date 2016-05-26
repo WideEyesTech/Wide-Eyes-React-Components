@@ -28,9 +28,10 @@
   &[disabled='disabled'],
   &[disabled='true'],
   &[disabled=''] {
+    box-shadow: none !important;
     cursor: default;
-    pointer-events: none;
     opacity: .5;
+    pointer-events: none;
   }
   &.btn-primary {
     color: $white;
