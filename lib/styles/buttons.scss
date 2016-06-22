@@ -7,21 +7,22 @@
 ================================*/
 .btn {
   @mixin transition all, $animation-speed;
-  border: none;
   border-radius: $border-radius;
   font-size: $font-size-base;
-  font-weight: bold;
-  height: auto;
-  line-height: 1;
-  min-width: 100px;
   padding: 0.7rem 1rem;
+  font-weight: bold;
+  min-width: 100px;
   cursor: pointer;
+  line-height: 1;
+  border: none;
+  height: auto;
 
   &:hover,
   &:focus {
     background-repeat: none;
     background-image: none;
     text-decoration: none;
+    box-shadow: none;
     outline: none;
   }
   &.btn-disabled,
@@ -37,7 +38,7 @@
     color: $white;
     border-color: $accent-color;
     background-color: $accent-color;
-    box-shadow: 0 2px 0 $accent-dark-color;
+    box-shadow: 0 2px 0 $accent-dark-color, 0 3px 1px rgba(0,0,0,.15);
     &:hover,
     &:focus {
       background-color: $accent-dark-color;
@@ -55,14 +56,14 @@
       }
     }
     &.btn-bg {
-      box-shadow: 0 3px 0 $accent-dark-color;
+      box-shadow: 0 3px 0 $accent-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-success {
     color: $white;
     border-color: $success-color;
     background-color: $success-color;
-    box-shadow: 0 2px 0 $success-dark-color;
+    box-shadow: 0 2px 0 $success-dark-color, 0 3px 1px rgba(0,0,0,.15);
     &:hover,
     &:focus {
       background-color: $success-dark-color;
@@ -74,20 +75,20 @@
       color: $success-color;
       &:hover,
       &:focus {
-        border-color: $white;
         color: $white;
+        border-color: $white;
         background-color: $success-color;
       }
     }
     &.btn-bg {
-      box-shadow: 0 3px 0 $success-dark-color;
+      box-shadow: 0 3px 0 $success-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-warning {
     color: $white;
     border-color: $opposite-color;
     background-color: $opposite-color;
-    box-shadow: 0 2px 0 $opposite-dark-color;
+    box-shadow: 0 2px 0 $opposite-dark-color, 0 3px 1px rgba(0,0,0,.15);
     &:hover,
     &:focus {
       background-color: $opposite-dark-color;
@@ -99,20 +100,20 @@
       color: $opposite-color;
       &:hover,
       &:focus {
-        border-color: $white;
         color: $white;
+        border-color: $white;
         background-color: $opposite-color;
       }
     }
     &.btn-bg {
-      box-shadow: 0 3px 0 $opposite-dark-color;
+      box-shadow: 0 3px 0 $opposite-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-danger {
     color: $white;
     border-color: $danger-color;
     background-color: $danger-color;
-    box-shadow: 0 2px 0 $danger-dark-color;
+    box-shadow: 0 2px 0 $danger-dark-color, 0 3px 1px rgba(0,0,0,.15);
     &:hover,
     &:focus {
       background-color: $danger-dark-color;
@@ -124,22 +125,22 @@
       color: $danger-color;
       &:hover,
       &:focus {
-        border-color: $white;
         color: $white;
+        border-color: $white;
         background-color: $danger-color;
       }
     }
     &.btn-bg {
-      box-shadow: 0 3px 0 $danger-dark-color;
+      box-shadow: 0 3px 0 $danger-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-link {
     background-color: transparent;
-    border: none;
-    box-shadow: none;
     color: $accent-color;
-    display: inline;
+    box-shadow: none;
     font-weight: 400;
+    display: inline;
+    border: none;
     min-width: 0;
     padding: 0;
     &:hover,
@@ -151,8 +152,6 @@
     &.btn-outline {
       background-color: transparent;
       box-shadow: none;
-      &:hover,
-      &:focus {}
     }
   }
 

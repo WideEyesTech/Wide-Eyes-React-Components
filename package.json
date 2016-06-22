@@ -3,7 +3,8 @@
   "version": "1.5.14",
   "main": "index.jsx",
   "scripts": {
-    "build": "babel-node tools/run build --release --verbose"
+    "start": "babel-node tools/run start --verbose",
+    "build": "babel-node tools/run build --release"
   },
   "author": "GC",
   "license": "ISC",
