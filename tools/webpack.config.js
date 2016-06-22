@@ -11,12 +11,12 @@ import merge from 'lodash.merge'
 import path from 'path'
 import webpack from 'webpack'
 
-const DEBUG = !process.argv.includes('--release');
-const VERBOSE = process.argv.includes('--verbose');
+const DEBUG = !process.argv.includes('--release')
+const VERBOSE = process.argv.includes('--verbose')
 const GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
-  __DEV__: DEBUG,
-};
+  __DEV__: DEBUG
+}
 
 //
 // Common configuration chunk to be used for both
@@ -29,18 +29,18 @@ const config = {
 
   stats: {
     colors: true,
-    reasons: DEBUG,
     hash: VERBOSE,
-    version: VERBOSE,
     timings: true,
+    reasons: DEBUG,
     chunks: VERBOSE,
-    chunkModules: VERBOSE,
     cached: VERBOSE,
-    cachedAssets: VERBOSE,
+    version: VERBOSE,
+    chunkModules: VERBOSE,
+    cachedAssets: VERBOSE
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin()
   ],
 
   resolve: {
@@ -51,31 +51,30 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$|\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        // plugins and presets are added on runtime (see build.js script)
+        loader: 'babel'
       }, {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
+        loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader'
       }
-    ],
+    ]
   },
 
-  postcss: function plugins(webpack) {
+  postcss: function plugins (webpack) {
     return [
       require('postcss-import')({ addDependencyTo: webpack }),
       require('precss'),
       require('postcss-cssnext')
-    ];
-  },
-};
+    ]
+  }
+}
 
 //
 // Configuration for the client-side bundle (client.js)
 // -----------------------------------------------------------------------------
 
-const clientConfig = merge({}, config, {
+export const buildConfig = merge({}, config, {
   entry: path.join(__dirname, '../lib/index.jsx'),
   output: {
     filename: 'index.js',
@@ -91,9 +90,23 @@ const clientConfig = merge({}, config, {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {screw_ie8: true, warnings: VERBOSE},
+      compress: {
+        screw_ie8: true,
+        warnings: VERBOSE
+      }
     })
   ]
-});
+})
 
-export default clientConfig;
+export const watchConfig = merge({}, config, {
+  entry: path.join(__dirname, '../build/index.js'),
+  output: {
+    filename: 'bundle.js',
+    path: path.join(__dirname, '../build')
+  },
+  plugins: [
+    new webpack.DefinePlugin(GLOBALS),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.AggressiveMergingPlugin()
+  ]
+})

@@ -19,3 +19,13 @@
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 }
+
+@define-mixin gradient $color-1, $color-2 {
+  background: $color-1;
+  background: -moz-linear-gradient(top, $color-1 0%, $color-2 100%);
+  background: -webkit-gradient(top, bottom, color-stop(0%, $color-1), color-stop(100%, $color-2));
+  background: -webkit-linear-gradient(top, $color-1 0%, $color-2 100%);
+  background: -o-linear-gradient(top, $color-1 0%, $color-2 100%);
+  background: -ms-linear-gradient(top, $color-1 0%, $color-2 100%);
+  background: linear-gradient(to bottom, $color-1 0%, $color-2 100%);
+}

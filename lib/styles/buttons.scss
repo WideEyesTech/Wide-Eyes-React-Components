@@ -6,7 +6,6 @@
 =            BUTTONS            =
 ================================*/
 .btn {
-  @mixin transition all, $animation-speed;
   border-radius: $border-radius;
   font-size: $font-size-base;
   padding: 0.7rem 1rem;
@@ -17,125 +16,123 @@
   border: none;
   height: auto;
 
-  &:hover,
   &:focus {
-    background-repeat: none;
-    background-image: none;
-    text-decoration: none;
-    box-shadow: none;
     outline: none;
   }
+
+  &:hover {
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
   &.btn-disabled,
   &[disabled='disabled'],
   &[disabled='true'],
   &[disabled=''] {
     box-shadow: none !important;
+    pointer-events: none;
     cursor: default;
     opacity: .5;
-    pointer-events: none;
   }
   &.btn-primary {
+    @mixin gradient $accent-color, color($accent-color lightness(-5%));
     color: $white;
-    border-color: $accent-color;
-    background-color: $accent-color;
-    box-shadow: 0 2px 0 $accent-dark-color, 0 3px 1px rgba(0,0,0,.15);
-    &:hover,
-    &:focus {
-      background-color: $accent-dark-color;
+    border-bottom: 1px solid;
+    border-color: $accent-dark-color;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+
+    &:hover {
+      @mixin gradient $accent-dark-color, color($accent-dark-color lightness(-5%));
+      border-color: color($accent-dark-color lightness(-5%));
     }
+
     &.btn-outline {
-      background-color: transparent;
+      background: transparent;
       box-shadow: none;
       border: 1px solid;
       color: $accent-color;
-      &:hover,
-      &:focus {
-        border-color: $white;
+      &:hover {
         color: $white;
-        background-color: $accent-color;
+        border-color: $white;
+        background: $accent-color;
       }
-    }
-    &.btn-bg {
-      box-shadow: 0 3px 0 $accent-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-success {
+    @mixin gradient $success-color, color($success-color lightness(-5%));
     color: $white;
-    border-color: $success-color;
-    background-color: $success-color;
-    box-shadow: 0 2px 0 $success-dark-color, 0 3px 1px rgba(0,0,0,.15);
-    &:hover,
-    &:focus {
-      background-color: $success-dark-color;
+    border-bottom: 1px solid;
+    border-color: $success-dark-color;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+
+    &:hover {
+      @mixin gradient $success-dark-color, color($success-dark-color lightness(-5%));
+      border-color: color($success-dark-color lightness(-5%));
     }
+
     &.btn-outline {
-      background-color: transparent;
+      background: transparent;
       box-shadow: none;
       border: 1px solid;
       color: $success-color;
-      &:hover,
-      &:focus {
+      &:hover {
         color: $white;
         border-color: $white;
-        background-color: $success-color;
+        background: $success-color;
       }
-    }
-    &.btn-bg {
-      box-shadow: 0 3px 0 $success-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-warning {
+    @mixin gradient $warning-color, color($warning-color lightness(-5%));
     color: $white;
-    border-color: $opposite-color;
-    background-color: $opposite-color;
-    box-shadow: 0 2px 0 $opposite-dark-color, 0 3px 1px rgba(0,0,0,.15);
-    &:hover,
-    &:focus {
-      background-color: $opposite-dark-color;
+    border-bottom: 1px solid;
+    border-color: $warning-dark-color;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+
+    &:hover {
+      @mixin gradient $warning-dark-color, color($warning-dark-color lightness(-5%));
+      border-color: color($warning-dark-color lightness(-5%));
     }
+
     &.btn-outline {
-      background-color: transparent;
+      background: transparent;
       box-shadow: none;
       border: 1px solid;
       color: $opposite-color;
-      &:hover,
-      &:focus {
+      &:hover {
         color: $white;
         border-color: $white;
-        background-color: $opposite-color;
+        background: $opposite-color;
       }
-    }
-    &.btn-bg {
-      box-shadow: 0 3px 0 $opposite-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-danger {
+    @mixin gradient $danger-color, color($danger-color lightness(-5%));
     color: $white;
-    border-color: $danger-color;
-    background-color: $danger-color;
-    box-shadow: 0 2px 0 $danger-dark-color, 0 3px 1px rgba(0,0,0,.15);
-    &:hover,
-    &:focus {
-      background-color: $danger-dark-color;
+    border-bottom: 1px solid;
+    border-color: $danger-dark-color;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
+
+    &:hover {
+      @mixin gradient $danger-dark-color, color($danger-dark-color lightness(-5%));
+      border-color: color($danger-dark-color lightness(-5%));
     }
+
     &.btn-outline {
-      background-color: transparent;
+      background: transparent;
       box-shadow: none;
       border: 1px solid;
       color: $danger-color;
-      &:hover,
-      &:focus {
+      &:hover {
         color: $white;
         border-color: $white;
-        background-color: $danger-color;
+        background: $danger-color;
       }
-    }
-    &.btn-bg {
-      box-shadow: 0 3px 0 $danger-dark-color, 0 5px 1px rgba(0,0,0,.15);
     }
   }
   &.btn-link {
-    background-color: transparent;
+    background: transparent;
     color: $accent-color;
     box-shadow: none;
     font-weight: 400;
@@ -143,28 +140,27 @@
     border: none;
     min-width: 0;
     padding: 0;
-    &:hover,
-    &:focus {
-      background-color: transparent;
+    &:hover {
+      background: transparent;
       color: $accent-dark-color;
     }
 
     &.btn-outline {
-      background-color: transparent;
+      background: transparent;
       box-shadow: none;
     }
   }
 
   &.btn-default {
-    background-color: transparent;
-    border: 2px solid $gray;
-    box-shadow: none;
-    color: $blackish;
+    @mixin gradient $gray-color, color($gray-color lightness(-5%));
+    color: $white;
+    border-bottom: 1px solid;
+    border-color: $gray-dark-color;
+    box-shadow: 0 1px 1px rgba(0,0,0,.15);
 
-    &:hover,
-    &:focus {
-      color: $white;
-      background-color: $gray;
+    &:hover {
+      @mixin gradient $gray-dark-color, color($gray-dark-color lightness(-5%));
+      border-color: color($gray-dark-color lightness(-5%));
     }
   }
 

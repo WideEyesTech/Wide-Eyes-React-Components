@@ -9,7 +9,7 @@
 
 import webpack from 'webpack';
 
-import webpackConfig from './webpack.config';
+import { buildConfig } from './webpack.config';
 
 /**
  * Launches a development web server with "live reload" functionality -
@@ -17,7 +17,7 @@ import webpackConfig from './webpack.config';
  */
 async function build() {
   return new Promise(resolve => {
-    webpackConfig.module.loaders
+    buildConfig.module.loaders
       .filter(x => x.loader === 'babel')
       .forEach(x => x.query = {
         presets: ['es2015', 'react'],
@@ -28,7 +28,7 @@ async function build() {
         ]
       });
 
-    const bundler = webpack(webpackConfig);
+    const bundler = webpack(buildConfig);
     bundler.run(resolve);
   });
 }
